@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+$LOAD_PATH.unshift File.join(File.dirname(__FILE__), '..', 'lib')
+require 'dm_gen'
+
+DMGen.run_cli Dir.pwd, 'dm-gen', '0.1', ARGV

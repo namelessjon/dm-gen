@@ -7,11 +7,12 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |s|
     s.name = "dm-gen"
-    s.summary = "TODO"
+    s.summary = "Simple commandline tool for generating dm models"
     s.email = "jonathan.stott@gmail.com"
     s.homepage = "http://github.com/namelessjon/dm-gen"
-    s.description = "TODO"
+    s.description = s.summary
     s.authors = ["Jonathan Stott"]
+    s.add_dependency('templater', '~> 0.5.0')
   end
 rescue LoadError
   puts "Jeweler not available. Install it with: sudo gem install technicalpickles-jeweler -s http://gems.github.com"
