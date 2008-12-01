@@ -13,6 +13,7 @@ begin
     s.description = s.summary
     s.authors = ["Jonathan Stott"]
     s.executables = 'dm-gen'
+    s.files =  FileList["[A-Z]+", "{bin,lib,spec}/**/*"]
     s.add_dependency('templater', '~> 0.5.0')
   end
 rescue LoadError
