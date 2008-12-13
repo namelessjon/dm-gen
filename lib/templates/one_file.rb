@@ -3,7 +3,7 @@
 # A one file test to show ...
 require 'rubygems'
 
-gem('dm-core', '~> 0.9.7')
+gem('dm-core', '~> 0.9.8')
 require 'dm-core'
 
 
@@ -18,8 +18,8 @@ class <%= model_name %>
 
   # properties
   property :id, Serial
-<% attributes.each do |name, type| -%>
-  property :<%= name.snake_case %>, <%= type.camel_case %>
+<% properties.each do |name, type| -%>
+  property :<%= name %>, <%= type %>
 <% end %>
 end
 
