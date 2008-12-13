@@ -2,16 +2,16 @@
 
 Gem::Specification.new do |s|
   s.name = %q{dm-gen}
-  s.version = "0.0.3"
+  s.version = "0.0.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jonathan Stott"]
-  s.date = %q{2008-12-01}
+  s.date = %q{2008-12-13}
   s.default_executable = %q{dm-gen}
   s.description = %q{Simple commandline tool for generating dm models}
   s.email = %q{jonathan.stott@gmail.com}
   s.executables = ["dm-gen"]
-  s.files = ["bin/dm-gen", "lib/templates", "lib/templates/one_file.rb", "lib/generators", "lib/generators/one_file.rb", "lib/dm_gen.rb", "spec/spec_helper.rb", "spec/dm_gen_spec.rb"]
+  s.files = ["bin/dm-gen", "lib/templates", "lib/templates/one_file.rb", "lib/generators", "lib/generators/one_file.rb", "lib/dm_gen.rb", "spec/dm_gen_spec.rb", "spec/spec_helper.rb", "spec/one_file_spec.rb"]
   s.homepage = %q{http://github.com/namelessjon/dm-gen}
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.1}
