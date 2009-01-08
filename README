@@ -1,9 +1,24 @@
 dm-gen
 ======
 
-Description goes here.
+dm-gen is a collection of generators for DataMapper, to allieviate the need to
+type boilerplate code to get started on a project. dm-gen uses templater
+(http://github.com/jnicklas/templater) as a base.
+
+Currently it supports only one generator, the 'one file' generator.
+
+
+one_file
+--------
+
+The one file generator generates a single file, which sets up a connection to an
+in memory sqlite3 database, along with debug logging and a example model, which
+it then automigrates.  One file scripts are great to use as demonstration,
+either of a bug, or just how to do something.
+
+  dm-gen one_file validations_example
 
 COPYRIGHT
 =========
 
-Copyright (c) 2008 Jonathan Stott. See LICENSE for details.
+Copyright (c) 2008-2009 Jonathan Stott. See LICENSE for details.
