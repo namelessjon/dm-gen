@@ -17,6 +17,14 @@ module DMGen
       File.join(File.dirname(__FILE__), '..', 'templates', 'is')
     end
 
+    def gem_name
+      "dm-is-#{name.snake_case}"
+    end
+
+    def destination_root
+      File.join(@destination_root, gem_name)
+    end
+
     # glob the template dir for all templates.
     glob!
   end
