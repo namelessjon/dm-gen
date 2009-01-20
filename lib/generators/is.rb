@@ -18,7 +18,15 @@ module DMGen
     end
 
     def gem_name
-      "dm-is-#{name.snake_case}"
+      "dm-is-#{snake_name}"
+    end
+
+    def snake_name
+      name.snake_case
+    end
+
+    def class_name
+      name.camel_case
     end
 
     def destination_root

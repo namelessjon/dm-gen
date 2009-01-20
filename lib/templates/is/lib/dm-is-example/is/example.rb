@@ -13,10 +13,10 @@ module DataMapper
       # Methods that should be included in DataMapper::Model.
       # Normally this should just be your generator, so that the namespace
       # does not get cluttered. ClassMethods and InstanceMethods gets added
-      # in the specific resources when you fire is :<%= name %>
+      # in the specific resources when you fire is :<%= snake_name %>
       ##
 
-      def is_<%= name %>(options)
+      def is_<%= snake_name %>(options)
 
         # Add class-methods
         extend  DataMapper::Is::<%= class_name %>::ClassMethods

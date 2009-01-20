@@ -7,14 +7,14 @@ gem 'dm-core', '~>0.9.10'
 require 'dm-core'
 
 # Require plugin-files
-require Pathname(__FILE__).dirname.expand_path / 'dm-is-example' / 'is' / 'example.rb'
+require Pathname(__FILE__).dirname.expand_path / '<%= gem_name %>' / 'is' / '<%= snake_name %>.rb'
 
 
 # Include the plugin in Resource
 module DataMapper
   module Resource
     module ClassMethods
-      include DataMapper::Is::Example
+      include DataMapper::Is::<%= class_name %>
     end # module ClassMethods
   end # module Resource
 end # module DataMapper

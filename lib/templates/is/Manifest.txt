@@ -5,8 +5,8 @@ README.txt
 Rakefile
 TODO
 lib/<%= gem_name %>.rb
-lib/<%= gem_name %>/is/<%= name %>.rb
+lib/<%= gem_name %>/is/<%= snake_name %>.rb
 lib/<%= gem_name %>/is/version.rb
-spec/integration/<%= name %>_spec.rb
+spec/integration/<%= snake_name %>_spec.rb
 spec/spec.opts
 spec/spec_helper.rb
