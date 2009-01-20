@@ -6,13 +6,15 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jonathan Stott"]
-  s.date = %q{2008-12-13}
+  s.date = %q{2009-01-20}
   s.default_executable = %q{dm-gen}
   s.description = %q{Simple commandline tool for generating dm models}
   s.email = %q{jonathan.stott@gmail.com}
   s.executables = ["dm-gen"]
-  s.files = ["bin/dm-gen", "lib/templates", "lib/templates/one_file.rb", "lib/generators", "lib/generators/one_file.rb", "lib/dm_gen.rb", "spec/dm_gen_spec.rb", "spec/spec_helper.rb", "spec/one_file_spec.rb"]
+  s.files = ["bin/dm-gen", "lib/generators", "lib/generators/one_file.rb", "lib/generators/is.rb", "lib/templates", "lib/templates/one_file.rb", "lib/templates/is", "lib/templates/is/TODO", "lib/templates/is/lib", "lib/templates/is/lib/%gem_name%", "lib/templates/is/lib/%gem_name%/is", "lib/templates/is/lib/%gem_name%/is/version.rb", "lib/templates/is/lib/%gem_name%/is/%snake_name%.rb", "lib/templates/is/lib/%gem_name%.rb", "lib/templates/is/spec", "lib/templates/is/spec/integration", "lib/templates/is/spec/integration/%snake_name%_spec.rb", "lib/templates/is/spec/spec.opts", "lib/templates/is/spec/spec_helper.rb", "lib/templates/is/tasks", "lib/templates/is/tasks/install.rb", "lib/templates/is/tasks/spec.rb", "lib/templates/is/LICENSE", "lib/templates/is/README.txt", "lib/templates/is/History.txt", "lib/templates/is/Rakefile", "lib/templates/is/Manifest.txt", "lib/dm_gen.rb", "spec/dm_gen_spec.rb", "spec/one_file_spec.rb", "spec/spec_helper.rb"]
+  s.has_rdoc = true
   s.homepage = %q{http://github.com/namelessjon/dm-gen}
+  s.rdoc_options = ["--inline-source", "--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.1}
   s.summary = %q{Simple commandline tool for generating dm models}
