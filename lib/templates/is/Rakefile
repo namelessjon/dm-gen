@@ -9,7 +9,11 @@ SUDO    = (WINDOWS || JRUBY) ? '' : ('sudo' unless ENV['SUDOLESS'])
 
 require ROOT + 'lib/<%= gem_name %>/is/version'
 
-Hoe.new('<%= gem_name %>', GEM_VERSION) do |p|
+# define some constants to help with task files
+GEM_NAME    = '<%= gem_name %>'
+GEM_VERSION = DataMapper::Is::<%= class_name %>::VERSION
+
+Hoe.new(GEM_NAME, GEM_VERSION) do |p|
   p.developer('John Doe', 'john [a] doe [d] com')
 
   p.description = 'A DataMapper plugin that ...'

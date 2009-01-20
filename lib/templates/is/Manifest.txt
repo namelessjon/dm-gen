@@ -10,3 +10,5 @@ lib/<%= gem_name %>/is/version.rb
 spec/integration/<%= snake_name %>_spec.rb
 spec/spec.opts
 spec/spec_helper.rb
+tasks/spec.rb
+tasks/install.rb
