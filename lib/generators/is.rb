@@ -34,7 +34,9 @@ module DMGen
     end
 
     # glob the template dir for all templates.
-    glob!
+    # since we want text files processed, we have to replace the default
+    # extension list.
+    glob!('', %w[rb txt Rakefile LICENSE TODO])
   end
 
   add :is, Is
