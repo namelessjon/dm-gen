@@ -20,3 +20,4 @@ end
 dir = File.join(File.dirname(__FILE__), 'generators')
 
 require File.join(dir, 'one_file')
+require File.join(dir, 'is')
