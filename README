@@ -18,6 +18,16 @@ either of a bug, or just how to do something.
 
   dm-gen one_file validations_example
 
+is
+--
+
+The is generator generates an 'is' plugin structure, appropriate for plugins
+such as dm-is-list, dm-is-remixable etc.  A complete plugin structure is
+generated, including a Rakefile and spec suite skeleton.
+
+  dm-gen is example
+
+
 COPYRIGHT
 =========
 
