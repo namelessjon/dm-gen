@@ -1,7 +1,4 @@
-=== 0.9.9 / 2009-01-04
+=== 0.0.1 / <%= Time.now.strftime('%Y-%m-%d') %>
 
-* No changes this version
+* Release!
 
-=== 0.9.8 / 2008-12-07
-
-* No changes this version

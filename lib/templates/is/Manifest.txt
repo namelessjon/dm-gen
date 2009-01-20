@@ -4,9 +4,9 @@ Manifest.txt
 README.txt
 Rakefile
 TODO
-lib/dm-is-example.rb
-lib/dm-is-example/is/example.rb
-lib/dm-is-example/is/version.rb
-spec/integration/example_spec.rb
+lib/<%= gem_name %>.rb
+lib/<%= gem_name %>/is/<%= name %>.rb
+lib/<%= gem_name %>/is/version.rb
+spec/integration/<%= name %>_spec.rb
 spec/spec.opts
 spec/spec_helper.rb

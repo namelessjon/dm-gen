@@ -1,6 +1,6 @@
 module DataMapper
   module Is
-    module Example
+    module <%= class_name %>
 
       ##
       # fired when your plugin gets included into Resource
@@ -13,15 +13,15 @@ module DataMapper
       # Methods that should be included in DataMapper::Model.
       # Normally this should just be your generator, so that the namespace
       # does not get cluttered. ClassMethods and InstanceMethods gets added
-      # in the specific resources when you fire is :example
+      # in the specific resources when you fire is :<%= name %>
       ##
 
-      def is_example(options)
+      def is_<%= name %>(options)
 
         # Add class-methods
-        extend  DataMapper::Is::Example::ClassMethods
+        extend  DataMapper::Is::<%= class_name %>::ClassMethods
         # Add instance-methods
-        include DataMapper::Is::Example::InstanceMethods
+        include DataMapper::Is::<%= class_name %>::InstanceMethods
 
       end
 
@@ -33,6 +33,6 @@ module DataMapper
 
       end # InstanceMethods
 
-    end # Example
+    end # <%= class_name %>
   end # Is
 end # DataMapper

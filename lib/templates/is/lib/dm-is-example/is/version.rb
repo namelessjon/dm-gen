@@ -1,7 +1,7 @@
 module DataMapper
   module Is
-    module Example
-      VERSION = '0.9.10'
+    module <%= class_name %>
+      VERSION = '0.0.1'
     end
   end
 end
