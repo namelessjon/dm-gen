@@ -48,6 +48,9 @@ describe "DMGen::Adapter" do
       @result.should.be.a.match(/^Manifest.txt$/)
     end
 
+    it "is the sorted list of its contents" do
+      @result.split("\n").sort.should == @result.split("\n")
+    end
   end
 
   describe "version.rb" do
