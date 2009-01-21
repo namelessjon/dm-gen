@@ -1,6 +1,6 @@
 require File.dirname(__FILE__) + '/spec_helper'
 
-describe "DMGen::OneFile" do
+describe "DMGen::Is" do
   before do
     @generator = DMGen::Is.new('/tmp', {}, 'awesome')
   end
