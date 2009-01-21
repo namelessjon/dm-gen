@@ -65,6 +65,21 @@ module DataMapper
 end
 eos
     end
+  end
+
+  describe "spec/spec_helper.rb" do
+    before do
+      @template = @generator.template(:spec_spec_helper_rb)
+      @result = @template.render
+    end
+
+    it "contains a connection string for the new adapter" do
+      @result.should.include('DataMapper.setup(:default, "awesome://some/uri/here")')
+    end
+
+    it "requires the adapter library" do
+      @result.should.be.a.match(/require .*lib\/awesome_adapter/)
+    end
 
   end
 end
