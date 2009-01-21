@@ -1,4 +1,4 @@
-gem 'dm-core', '~>0.9.10'
+gem 'dm-core', '~> <%= DMGen::DM_VERSION %>'
 require 'dm-core'
 
 module DataMapper

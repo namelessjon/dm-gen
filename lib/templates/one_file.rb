@@ -3,7 +3,7 @@
 # A one file test to show ...
 require 'rubygems'
 
-gem('dm-core', '~> 0.9.8')
+gem('dm-core', '~> <%= DMGen::DM_VERSION %>')
 require 'dm-core'
 
 

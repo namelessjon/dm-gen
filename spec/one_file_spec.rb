@@ -35,6 +35,7 @@ shared "one file generator" do
 
   it "requires dm-core" do
     @result.should.match(/require 'dm-core'/)
+    @result.should.match(/gem\('dm-core', '~> 0.9.10'\)/)
   end
 
   # other boilerplate
