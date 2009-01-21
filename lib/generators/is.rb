@@ -37,6 +37,10 @@ module DMGen
     # since we want text files processed, we have to replace the default
     # extension list.
     glob!('', %w[rb txt Rakefile LICENSE TODO])
+
+    def manifest_files
+      self.all_actions.map {|t| t.destination.gsub(/#{destination_root}\//,'') }.sort
+    end
   end
 
   add :is, Is
