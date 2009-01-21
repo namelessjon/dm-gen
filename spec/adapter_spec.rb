@@ -82,4 +82,15 @@ eos
     end
 
   end
+
+  describe "Rakefile" do
+    before do
+      @template = @generator.template(:rakefile)
+      @result = @template.render
+    end
+
+    it "requires the version file" do
+      @result.should.include(%q{require ROOT + 'lib/awesome_adapter/version'})
+    end
+  end
 end

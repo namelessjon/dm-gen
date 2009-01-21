@@ -7,7 +7,7 @@ JRUBY   = RUBY_PLATFORM =~ /java/
 WINDOWS = Gem.win_platform?
 SUDO    = (WINDOWS || JRUBY) ? '' : ('sudo' unless ENV['SUDOLESS'])
 
-require ROOT + 'lib/<%= gem_name %>/is/version'
+require ROOT + 'lib/<%= adapter_file %>/version'
 
 # define some constants to help with task files
 GEM_NAME    = '<%= gem_name %>'
