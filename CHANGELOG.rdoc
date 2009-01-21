@@ -1,0 +1,28 @@
+=== 0.2.2 / 2009-01-21
+
+* Now using a constant for the DataMapper version supported.
+* Added this changelog
+
+=== 0.2.1 / 2009-01-21
+
+* Minor correction to the is plugin manifest
+
+=== 0.2.0 / 2009-01-21
+
+* Added generator for DataMapper adapters
+
+=== 0.1.0 / 2009-01-20
+
+* Added generator for DataMapper is plugins
+
+=== 0.0.4 / 2008-12-13
+
+* check for .rb extension on the given filename, and ignore it
+* improved documentation for generator
+* filter out serial from the given properties list
+* added a whole bunch of specs!
+* Other, minor, output tweaks
+
+=== 0.0.3 / 2008-12-01
+
+* First working release!
