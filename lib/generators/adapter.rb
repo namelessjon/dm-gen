@@ -24,12 +24,16 @@ module DMGen
       "#{snake_name}-adapter"
     end
 
+    def adapter_file
+      "#{snake_name}_adapter"
+    end
+
     def snake_name
       name.snake_case
     end
 
     def class_name
-      name.camel_case
+      "#{name.camel_case}Adapter"
     end
 
     def destination_root
@@ -40,6 +44,10 @@ module DMGen
     # since we want text files processed, we have to replace the default
     # extension list.
     glob!('', %w[rb txt Rakefile LICENSE TODO])
+
+    def manifest_files
+      self.all_actions.map {|t| t.destination.gsub(/#{destination_root}\//,'') }.sort
+    end
   end
 
   add :adapter, Adapter

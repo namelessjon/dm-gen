@@ -14,7 +14,7 @@ describe "DMGen::Adapter" do
     @generator.should create('/tmp/dm-awesome-adapter/lib/awesome_adapter/version.rb')
   end
   it "creates the spec folder layout" do
-    @generator.should create('/tmp/dm-awesome-adapter/spec/integration/awesome_spec.rb')
+    @generator.should create('/tmp/dm-awesome-adapter/spec/integration/awesome_adapter_spec.rb')
     @generator.should create('/tmp/dm-awesome-adapter/spec/spec.opts')
     @generator.should create('/tmp/dm-awesome-adapter/spec/spec_helper.rb')
   end
@@ -36,5 +36,35 @@ describe "DMGen::Adapter" do
   it "creates support tasks" do
     @generator.should create('/tmp/dm-awesome-adapter/tasks/spec.rb')
     @generator.should create('/tmp/dm-awesome-adapter/tasks/install.rb')
+  end
+
+  describe "Manifest.txt" do
+    before do
+      @template = @generator.template(:manifest_txt)
+      @result = @template.render
+    end
+
+    it "contains itself" do
+      @result.should.be.a.match(/^Manifest.txt$/)
+    end
+
+  end
+
+  describe "version.rb" do
+    before do
+      @template = @generator.template(:lib_adapter_file_version_rb)
+      @result = @template.render
+    end
+
+    it "generates the correct output" do
+      @result.should.include(<<-eos)
+module DataMapper
+  module AwesomeAdapter
+    VERSION = '0.0.1'
+  end
+end
+eos
+    end
+
   end
 end
