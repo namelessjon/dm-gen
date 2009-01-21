@@ -18,6 +18,7 @@ either of a bug, or just how to do something.
 
   dm-gen one_file validations_example
 
+
 is
 --
 
@@ -26,6 +27,18 @@ such as dm-is-list, dm-is-remixable etc.  A complete plugin structure is
 generated, including a Rakefile and spec suite skeleton.
 
   dm-gen is example
+
+
+adapter
+-------
+
+The adapter generator generates an adapter structure, appropriate for adapters
+to new data-sources, such as couchdb, YAML files, or anything else.  A complete
+plugin structure is generated.  The adapter file generated comes with a lot of
+documentation explaining the arguments and returns of the 4 methods in the DM
+adaptor API.
+
+  dm-gen adapter example
 
 
 COPYRIGHT
