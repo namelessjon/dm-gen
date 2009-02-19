@@ -1,3 +1,7 @@
+=== 0.2.3 / 2009-02-19
+
+* Removed errant directory from gemspec.
+
 === 0.2.2 / 2009-01-21
 
 * Now using a constant for the DataMapper version supported.
