@@ -1,7 +1,6 @@
 require 'rake'
 require 'rake/testtask'
 require 'rake/rdoctask'
-require 'rcov/rcovtask'
 
 begin
   require 'jeweler'
@@ -18,6 +17,7 @@ begin
   end
 rescue LoadError
   puts "Jeweler not available. Install it with: sudo gem install technicalpickles-jeweler -s http://gems.github.com"
+  puts "Or just 'gem build dm-gen.gemspec' and then install the gem."
 end
 
 Rake::TestTask.new do |t|
@@ -34,10 +34,15 @@ Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
 
-Rcov::RcovTask.new do |t|
-  t.libs << "spec"
-  t.test_files = FileList['spec/**/*_spec.rb']
-  t.verbose = true
+begin
+  require 'rcov/rcovtask'
+  Rcov::RcovTask.new do |t|
+    t.libs << "spec"
+    t.test_files = FileList['spec/**/*_spec.rb']
+    t.verbose = true
+  end
+rescue LoadError
+  # just do nothing
 end
 
-task :default => :rcov
+task :default => :test
