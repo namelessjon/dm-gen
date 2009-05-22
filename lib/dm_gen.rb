@@ -11,7 +11,7 @@ require 'templater'
 module DMGen
   extend Templater::Manifold
 
-  DM_VERSION = '0.9.10'
+  DM_VERSION = '0.9.11'
 
   desc <<-eos
     Generates files for the DataMapper ORM.
