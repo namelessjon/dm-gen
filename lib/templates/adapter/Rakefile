@@ -23,7 +23,7 @@ Hoe.new(GEM_NAME, GEM_VERSION) do |p|
   p.clean_globs |= %w[ log pkg coverage ]
   p.spec_extras = { :has_rdoc => true, :extra_rdoc_files => %w[ README.txt LICENSE TODO History.txt ] }
 
-  p.extra_deps << [['dm-core', "~> 0.9.10"]]
+  p.extra_deps << ['dm-core', "<%= DMGen::DM_VERSION %>"]
 
 end
 
