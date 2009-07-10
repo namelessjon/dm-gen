@@ -39,6 +39,8 @@ adaptor API.
 
   dm-gen adapter example
 
+NB: This generates adapters with the 0.10.x API NOT the 0.9.x API.  So make sure
+you're running DM from the next branch, or from http://gems.datamapper.org/
 
 == COPYRIGHT
 
