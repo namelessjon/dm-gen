@@ -13,7 +13,7 @@ begin
     s.authors = ["Jonathan Stott"]
     s.executables = 'dm-gen'
     s.files =  FileList["[A-Z]+", "*.rdoc", "{bin,lib,spec}/**/*"]
-    s.add_dependency('templater', '~> 0.5.0')
+    s.add_dependency('templater', '~> 1.0')
   end
 rescue LoadError
   puts "Jeweler not available. Install it with: sudo gem install technicalpickles-jeweler -s http://gems.github.com"
