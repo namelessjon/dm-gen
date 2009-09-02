@@ -1,10 +1,3 @@
-begin
-  require 'minigems'
-rescue LoadError
-  require 'rubygems'
-end
-
-gem('templater', '~> 0.5.0')
 require 'templater'
 
 # setup manifold
@@ -19,8 +12,6 @@ module DMGen
 end
 
 # require generators
-dir = File.join(File.dirname(__FILE__), 'generators')
-
-require File.join(dir, 'one_file')
-require File.join(dir, 'is')
-require File.join(dir, 'adapter')
+require 'dm-gen/generators/one_file'
+require 'dm-gen/generators/is'
+require 'dm-gen/generators/adapter'
