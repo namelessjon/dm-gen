@@ -1,3 +1,24 @@
+=== 0.4.2 / 2009-11-06
+
+* Fixed rdoc generation
+* Updated this changelog
+* Fixed readme.
+
+
+=== 0.4.1 / 2009-11-06
+
+* Updated one_file output
+* Updated summary and description
+* Moved to gemcutter
+
+=== 0.4.0 / 2009-09-02
+
+* Generally fixed up dm-gen's layout to become a better 'gem citizen'
+
+=== 0.3.1 / 2009-08-30
+
+* Requiring latest templater
+
 === 0.3.0 / 2009-07-10
 
 * Updated dm version to 0.10.0
