@@ -1,20 +1,8 @@
-# Needed to import datamapper and other gems
-require 'rubygems'
-require 'pathname'
-
 # Add all external dependencies for the plugin here
-gem 'dm-core', '~> <%= DMGen::DM_VERSION %>'
-require 'dm-core'
+# require 'dm-core' - this can probably be assumed.
 
 # Require plugin-files
-require Pathname(__FILE__).dirname.expand_path / '<%= gem_name %>' / 'is' / '<%= snake_name %>.rb'
+require '<%= gem_name %>/is/<%= snake_name %>.rb'
 
-
-# Include the plugin in Resource
-module DataMapper
-  module Resource
-    module ClassMethods
-      include DataMapper::Is::<%= class_name %>
-    end # module ClassMethods
-  end # module Resource
-end # module DataMapper
+# Include the plugin in DM models
+DataMapper::Model.append_extensions DataMapper::Is::<%= class_name %>
