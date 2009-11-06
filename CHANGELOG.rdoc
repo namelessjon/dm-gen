@@ -1,9 +1,9 @@
 === 0.4.2 / 2009-11-06
 
+* Updated is plugin generator
 * Fixed rdoc generation
 * Updated this changelog
-* Fixed readme.
-
+* Fixed README
 
 === 0.4.1 / 2009-11-06
 
