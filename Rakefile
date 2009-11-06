@@ -6,10 +6,14 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |s|
     s.name = "dm-gen"
-    s.summary = "Simple commandline tool for generating dm models"
+    s.summary = "Simple commandline tool for generating DataMapper related files"
     s.email = "jonathan.stott@gmail.com"
     s.homepage = "http://github.com/namelessjon/dm-gen"
-    s.description = s.summary
+    s.description = <<-eos
+dm-gen is a simple commandline tool for generating DataMapper related files.
+It includes generators for standalone or one file examples, is plugins, adapters
+and may eventually be expanded to do more.
+eos
     s.authors = ["Jonathan Stott"]
     s.executables = 'dm-gen'
     s.files =  FileList["[A-Z]+", "*.rdoc", "{bin,lib,spec}/**/*"]
