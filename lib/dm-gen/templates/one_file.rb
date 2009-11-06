@@ -22,3 +22,11 @@ class <%= model_name %>
 end
 
 DataMapper.auto_migrate!
+
+# put the code here!
+
+
+__END__
+
+# put a copy of the output here!
+
