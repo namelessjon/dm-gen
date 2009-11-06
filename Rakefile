@@ -19,6 +19,7 @@ eos
     s.files =  FileList["[A-Z]+", "*.rdoc", "{bin,lib,spec}/**/*"]
     s.add_dependency('templater', '~> 1.0')
   end
+  Jeweler::GemcutterTasks.new
 rescue LoadError
   puts "Jeweler not available. Install it with: sudo gem install technicalpickles-jeweler -s http://gems.github.com"
   puts "Or just 'gem build dm-gen.gemspec' and then install the gem."
