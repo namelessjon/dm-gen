@@ -1,10 +1,5 @@
-require 'pathname'
-require 'rubygems'
+require 'dm-core/spec/lib/pending_helpers'
 
-gem 'rspec', '~>1.1.11'
-require 'spec'
-
-require Pathname(__FILE__).dirname.expand_path.parent + 'lib/<%= adapter_file %>'
-
-DataMapper.setup(:default, "<%= name %>://some/uri/here")
-
+Spec::Runner.configure do |config|
+  config.include(DataMapper::Spec::PendingHelpers)
+end

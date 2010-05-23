@@ -1,3 +1,7 @@
+=== 0.5.0 /
+
+* Updated adapter generator
+
 === 0.4.2 / 2009-11-06
 
 * Updated is plugin generator

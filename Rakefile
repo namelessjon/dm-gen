@@ -16,7 +16,6 @@ and may eventually be expanded to do more.
 eos
     s.authors = ["Jonathan Stott"]
     s.executables = 'dm-gen'
-    s.files =  FileList["[A-Z]+", "*.rdoc", "{bin,lib,spec}/**/*"]
     s.rdoc_options = %w{--exclude lib/dm-gen/templates --title dm-gen --line-numbers --inline-source --main README.rdoc}
     s.add_dependency('templater', '~> 1.0')
   end

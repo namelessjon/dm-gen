@@ -2,16 +2,9 @@ require 'dm-core'
 
 module DataMapper
   module Adapters
-    # The documentation for this adapter was taken from
-    #
-    # lib/dm-core/adapters/in_memory_adapter.rb
-    #
-    # Which is intended as a general source of documentation for the
-    # implementation to be followed by all DataMapper adapters.  The implementor
-    # is well advised to read over the adapter before implementing their own.
-    #
+    # This documentation is taken from the in_memory adapter in dm-core.  It
+    # explains the expected behaviour of the core methods which make up the API.
     class <%= class_name %> < AbstractAdapter
-      ##
       # Used by DataMapper to put records into a data-store: "INSERT" in SQL-speak.
       # It takes an array of the resources (model instances) to be saved. Resources
       # each have a key that can be used to quickly look them up later without
@@ -25,7 +18,6 @@ module DataMapper
         raise NotImplementedError
       end
 
-      ##
       # Looks up one record or a collection of records from the data-store:
       # "SELECT" in SQL.
       #
@@ -41,7 +33,6 @@ module DataMapper
         raise NotImplementedError
       end
 
-      ##
       # Used by DataMapper to update the attributes on existing records in a
       # data-store: "UPDATE" in SQL-speak. It takes a hash of the attributes
       # to update with, as well as a collection object that specifies which resources
@@ -57,7 +48,6 @@ module DataMapper
         raise NotImplementedError
       end
 
-      ##
       # Destroys all the records matching the given query. "DELETE" in SQL.
       #
       # @param [DataMapper::Collection] resources
@@ -71,11 +61,15 @@ module DataMapper
         raise NotImplementedError
       end
 
+      # TODO consider proper automigrate functionality
+      def reset
+        raise NotImplementedError
+      end
+
       private
 
-      ##
       # Make a new instance of the adapter.
-      # 
+      #
       # @param [String, Symbol] name
       #   The name of the Repository using this adapter.
       # @param [String, Hash] uri_or_options
@@ -89,9 +83,6 @@ module DataMapper
 
     end # class <%= class_name %>
 
-    ##
-    #
-    # This can be used by plugins to trigger hooks for your adapter.
     const_added(:<%= class_name %>)
   end # module Adapters
 end # module DataMapper

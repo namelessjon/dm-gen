@@ -17,15 +17,7 @@ module DMGen
     end
 
     def gem_name
-      "dm-#{adapter_name}"
-    end
-
-    def adapter_name
-      "#{snake_name}-adapter"
-    end
-
-    def adapter_file
-      "#{snake_name}_adapter"
+      "dm-#{snake_name}-adapter"
     end
 
     def snake_name
@@ -43,11 +35,9 @@ module DMGen
     # glob the template dir for all templates.
     # since we want text files processed, we have to replace the default
     # extension list.
-    glob!('', %w[rb txt Rakefile LICENSE TODO])
+    glob!('', %w[rb txt Rakefile LICENSE README.rdoc])
 
-    def manifest_files
-      self.all_actions.map {|t| t.destination.gsub(/#{destination_root}\//,'') }.sort
-    end
+    file :gitignore, '.gitignore'
   end
 
   add :adapter, Adapter
