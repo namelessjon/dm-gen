@@ -17,10 +17,6 @@ module DMGen
     def gem_name
       "dm-is-#{snake_name}"
     end
-
-    def manifest_files
-      self.all_actions.map {|t| t.destination.gsub(/#{destination_root}\//,'') }.sort
-    end
   end
 
   add :is, Is

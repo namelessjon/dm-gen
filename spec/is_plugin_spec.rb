@@ -5,13 +5,20 @@ describe "DMGen::Is" do
     @generator = DMGen::Is.new('/tmp', {}, 'awesome')
   end
 
+  describe "renders all templates without errors" do
+    DMGen::Is.new('/tmp', {}, 'awesome').templates.each do |template|
+      it "should render '#{template.name}' without raising" do
+        lambda { template.render }.should.not.raise(Exception)
+      end
+    end
+  end
+
   # basic file creation.
   it "creates a Rakefile" do
     @generator.should create('/tmp/dm-is-awesome/Rakefile')
   end
   it "creates the lib folder layout" do
     @generator.should create('/tmp/dm-is-awesome/lib/dm-is-awesome.rb')
-    @generator.should create('/tmp/dm-is-awesome/lib/dm-is-awesome/is/version.rb')
     @generator.should create('/tmp/dm-is-awesome/lib/dm-is-awesome/is/awesome.rb')
   end
   it "creates the spec folder layout" do
@@ -20,37 +27,15 @@ describe "DMGen::Is" do
     @generator.should create('/tmp/dm-is-awesome/spec/spec_helper.rb')
   end
   it "creates a README" do
-    @generator.should create('/tmp/dm-is-awesome/README.txt')
-  end
-  it "creates a History file" do
-    @generator.should create('/tmp/dm-is-awesome/History.txt')
+    @generator.should create('/tmp/dm-is-awesome/README.rdoc')
   end
   it "creates a LICENSE" do
     @generator.should create('/tmp/dm-is-awesome/LICENSE')
   end
-  it "creates a Manifest for Hoe" do
-    @generator.should create('/tmp/dm-is-awesome/Manifest.txt')
-  end
-  it "creates a TODO list" do
-    @generator.should create('/tmp/dm-is-awesome/TODO')
-  end
   it "creates support tasks" do
-    @generator.should create('/tmp/dm-is-awesome/tasks/spec.rb')
-    @generator.should create('/tmp/dm-is-awesome/tasks/install.rb')
-  end
-
-  describe "Manifest.txt" do
-    before do
-      @template = @generator.template(:manifest_txt)
-      @result = @template.render
-    end
-
-    it "contains itself" do
-      @result.should.be.a.match(/^Manifest.txt$/)
-    end
-
-    it "is the sorted list of its contents" do
-      @result.split("\n").sort.should == @result.split("\n")
-    end
+    @generator.should create('/tmp/dm-is-awesome/tasks/local_gemfile.rake')
+    @generator.should create('/tmp/dm-is-awesome/tasks/spec.rake')
+    @generator.should create('/tmp/dm-is-awesome/tasks/yard.rake')
+    @generator.should create('/tmp/dm-is-awesome/tasks/yardstick.rake')
   end
 end

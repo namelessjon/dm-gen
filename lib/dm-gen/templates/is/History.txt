@@ -1,4 +1,0 @@
-=== 0.0.1 / <%= Time.now.strftime('%Y-%m-%d') %>
-
-* Release!
-
