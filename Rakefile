@@ -25,7 +25,7 @@ rescue LoadError
   puts "Or just 'gem build dm-gen.gemspec' and then install the gem."
 end
 
-Rake::TestTask.new do |t|
+Rake::TestTask.new(:spec) do |t|
   t.libs << 'lib'
   t.pattern = 'spec/**/*_spec.rb'
   t.verbose = false
