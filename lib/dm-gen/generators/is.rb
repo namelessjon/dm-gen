@@ -1,6 +1,7 @@
+require 'dm-gen/generators/plugin_generator'
 module DMGen
   class Is < Templater::Generator
-    first_argument :name, :required => true
+    include PluginGenerator
 
     desc <<-eos
       Generates an 'is' plugin for DataMapper, such as dm-is-list.
@@ -13,30 +14,9 @@ module DMGen
 
     eos
 
-    def self.source_root
-      File.join(File.dirname(__FILE__), '..', 'templates', 'is')
-    end
-
     def gem_name
       "dm-is-#{snake_name}"
     end
-
-    def snake_name
-      name.snake_case
-    end
-
-    def class_name
-      name.camel_case
-    end
-
-    def destination_root
-      File.join(@destination_root, gem_name)
-    end
-
-    # glob the template dir for all templates.
-    # since we want text files processed, we have to replace the default
-    # extension list.
-    glob!('', %w[rb txt Rakefile LICENSE TODO])
 
     def manifest_files
       self.all_actions.map {|t| t.destination.gsub(/#{destination_root}\//,'') }.sort
