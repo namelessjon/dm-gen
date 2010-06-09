@@ -3,10 +3,11 @@
 # A one file test to show ...
 require 'rubygems'
 require 'dm-core'
+require 'dm-migrations'
 
 
 # setup the logger
-DataMapper::Logger.new(STDOUT, :debug)
+DataMapper::Logger.new($stdout, :debug)
 
 # connect to the DB
 DataMapper.setup(:default, 'sqlite3::memory:')
@@ -21,7 +22,7 @@ class <%= model_name %>
 <% end %>
 end
 
-DataMapper.auto_migrate!
+DataMapper.finalize.auto_migrate!
 
 # put the code here!
 

@@ -1,7 +1,8 @@
 === 0.5.0 /
 
-* Updated adapter generator
-* Updated is generator
+* Updated adapter generator to 1.0
+* Updated is generator to 1.0
+* Updated one file to 1.0
 
 === 0.4.2 / 2009-11-06
 
